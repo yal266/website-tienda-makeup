@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductsList/ProductCard";
 import { fetchProducts } from "@services/ProductsServiceList";
+import Loading from "../components/common/Cargando/Loading";
 
 const ProductListMain = () => {
   const [productos, setProductos] = useState([]);
@@ -23,14 +24,14 @@ const ProductListMain = () => {
     loadProducts();
   }, []);
 
-  if (isLoading) return <div>Cargando...</div>; // Mostrar indicador de carga
+  if (isLoading) return <Loading />; // Mostrar indicador de carga
   if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="container mx-auto px-5 section">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {productos.map((producto) => (
-          <ProductCard key={producto.id} product={producto} />
+        {productos.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
