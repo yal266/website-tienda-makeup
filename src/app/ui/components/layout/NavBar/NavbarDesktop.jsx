@@ -9,7 +9,7 @@ const NavbarDesktop = ({ navItems }) => {
           <li key={item.id} className="mr-10 relative group">
             <Link
               to={item.link}
-              className="text-xs text-gray-700 uppercase hover:text-black"
+              className="text-sm text-gray-700 uppercase hover:text-black"
             >
               {item.label}
             </Link>

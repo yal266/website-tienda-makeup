@@ -1,27 +1,29 @@
 import React from "react";
-import { API_BASE_URL } from "@api/APIweb";
 import nofoto from "@assets/images/nofoto.jpg";
-import { RiHeart3Line, RiShoppingBagLine } from "@remixicon/react";
+import { RiEyeLine, RiHeart3Line, RiShoppingBagLine } from "@remixicon/react";
 
 const ProductCard = ({ product }) => {
   if (!product) return null;
 
   return (
-    <div className="max-w-xs border border-gray-200 rounded-lg shadow overflow-hidden">
+    <div className="max-w-xs border border-gray-200 rounded-lg shadow overflow-hidden relative group">
       <div className="w-full h-48 bg-white flex items-center justify-center relative">
         <button className="absolute top-2 right-2 border rounded-full p-2 border-fuchsia-200 hover:bg-gray-100 transition-colors">
           <RiHeart3Line className="w-5 h-5 text-gray-800" />
+        </button>
+        <button className="absolute top-10 right-2 border rounded-full p-2 border-fuchsia-200 hover:bg-gray-100 transition-colors opacity-0 group-hover:opacity-100">
+          <RiEyeLine className="w-5 h-5 text-gray-800" />
         </button>
 
         <img
           className="w-40 h-40 object-contain"
           src={
             product.api_featured_image ? `https:${product.api_featured_image}` : nofoto
-          }
+          } 
           alt={product.name}
         />
       </div>
-      <div className="p-4 bg-pink-100 rounded-lg">
+      <div className="p-4 bg-pink-200 rounded-lg">
         <h3 className="font-bold text-md mb-2 truncate text-gray-800">
           {product.name}
         </h3>

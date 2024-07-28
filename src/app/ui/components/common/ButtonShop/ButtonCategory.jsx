@@ -31,13 +31,13 @@ const ButtonCategory = ({ categories, onCategorySelect }) => {
   };
 
   return (
-    <div className="container mx-auto px-5">
+    <div className="container section mx-auto px-5">
       <Slider {...settings}>
         {categories.map((category) => (
           <div key={category.idcategoria} className="px-1">
             <button
               onClick={() => onCategorySelect(category.idcategoria)}
-              className="text-xs bg-red-300 hover:bg-gray-200 py-3 rounded-full hover:text-black whitespace-nowrap w-full"
+              className="text-xs border-solid border-pink-200 hover:bg-gray-200 hover:border-gray-300 py-3 rounded-full hover:text-black whitespace-nowrap w-full"
             >
               {category.nombre}
             </button>

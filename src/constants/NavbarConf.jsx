@@ -71,6 +71,7 @@ export const navItems = [
       },
     ],
   },
-  { id: 4, label: "About", link: "/about" },
-  { id: 5, label: "Contact", link: "/contact" },
+  { id: 4, label: "Shop", link: "/shop" },
+  { id: 5, label: "About", link: "/about" },
+  { id: 6, label: "Contact", link: "/contact" },
 ];

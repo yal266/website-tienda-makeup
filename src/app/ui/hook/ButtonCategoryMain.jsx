@@ -4,6 +4,8 @@ import ButtonCategory from "../components/common/ButtonShop/ButtonCategory";
 
 const ButtonCategoryMain = ({ onCategorySelect }) => {
   const [categories, setCategories] = useState([]);
+  const [error, setError] = useState(null); // Manejo de errores
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     const loadCategories = async () => {
@@ -21,6 +23,9 @@ const ButtonCategoryMain = ({ onCategorySelect }) => {
     loadCategories();
   }, []);
 
+  if (isLoading) return <div>Cargando...</div>; // Mostrar indicador de carga
+  if (error) return <div>Error: {error}</div>; 
+
   return (
     <ButtonCategory
       categories={categories}
@@ -30,3 +35,4 @@ const ButtonCategoryMain = ({ onCategorySelect }) => {
 };
 
 export default ButtonCategoryMain;
+                                                                                                                          

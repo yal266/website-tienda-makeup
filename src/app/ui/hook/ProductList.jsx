@@ -4,6 +4,8 @@ import { fetchProducts } from "@services/ProductsServiceList";
 
 const ProductListMain = () => {
   const [productos, setProductos] = useState([]);
+  const [error, setError] = useState(null); // Manejo de errores
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -20,6 +22,9 @@ const ProductListMain = () => {
 
     loadProducts();
   }, []);
+
+  if (isLoading) return <div>Cargando...</div>; // Mostrar indicador de carga
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="container mx-auto px-5 section">

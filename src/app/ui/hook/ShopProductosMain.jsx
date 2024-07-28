@@ -4,6 +4,8 @@ import Shoproductos from "../pages/Tienda/Shoproductos";
 
 const ShoproductosMain = ({ onCategorySelect }) => {
   const [categories, setCategories] = useState([]);
+  const [error, setError] = useState(null); // Manejo de errores
+  const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {
     const loadCategories = async () => {
@@ -18,7 +20,10 @@ const ShoproductosMain = ({ onCategorySelect }) => {
       }
     };
     loadCategories();
-  }, []);
+  }, []);                   
+
+  if (isLoading) return <div>Cargando...</div>; // Mostrar indicador de carga
+  if (error) return <div>Error: {error}</div>; 
 
   return (
     <Shoproductos categories={categories} onCategorySelect={onCategorySelect} />

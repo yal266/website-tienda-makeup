@@ -2,8 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { API_BASE_URL } from "@api/APIweb";
-
+                                                                                                                                                                
 const Shoproductos = ({ categories, onCategorySelect }) => {
   const settings = {
     dots: false,
@@ -33,14 +32,14 @@ const Shoproductos = ({ categories, onCategorySelect }) => {
     <div className="container mx-auto section">
       <Slider {...settings}>
         {categories.map((category) => (
-          <div key={category.idcategoria} className="flex items-center">
+          <div key={category.id} className="flex items-center">
             <div className="flex overflow-hidden justify-center items-center">
               <button
-                onClick={() => onCategorySelect(category.idcategoria)}
+                onClick={() => onCategorySelect(category.id )}
                 className="focus:outline-none "
               >
                 <img
-                  src={`${API_BASE_URL}${category.foto}`}
+                  src={""}
                   alt={category.nombre}
                   className="h-24 w-24 rounded-full object-cover border-2 border-pink-200 hover:border-pink-400 transition-colors"
                 />

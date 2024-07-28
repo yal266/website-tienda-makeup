@@ -28,7 +28,7 @@ const Navbar = ({
 
         <a
           href=""
-          className="inline-flex place-items-center gap-2 text-md font-medium text-gray-900"
+          className="inline-flex place-items-center gap-2 text-lg font-medium text-gray-900"
         >
           <RiFlowerLine size={17} />
           <span>YALI-SKIN</span>
@@ -47,13 +47,13 @@ const Navbar = ({
 
         <div className="flex items-center space-x-4">
           <Link to="/carrito">
-            <RiShoppingBag4Line size={15} />
+            <RiShoppingBag4Line size={16} />
           </Link>
           <Link to="/login">
-            <RiUserLine size={15} />
+            <RiUserLine size={16} />
           </Link>
           <button>
-            <RiMoonLine size={15} />
+            <RiMoonLine size={16} />
           </button>
         </div>
       </div>
