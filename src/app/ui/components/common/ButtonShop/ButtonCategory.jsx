@@ -34,18 +34,19 @@ const ButtonCategory = ({ categories, onCategorySelect }) => {
     <div className="container section mx-auto px-5">
       <Slider {...settings}>
         {categories.map((category) => (
-          <div key={category.idcategoria} className="px-1">
+          <div key={category.product_type
+          } className="px-1">
             <button
-              onClick={() => onCategorySelect(category.idcategoria)}
+              onClick={() => onCategorySelect(category.product_type)}
               className="text-xs border-solid border-pink-200 hover:bg-gray-200 hover:border-gray-300 py-3 rounded-full hover:text-black whitespace-nowrap w-full"
             >
-              {category.nombre}
+              {category.name}
             </button>
           </div>
         ))}
       </Slider>
     </div>
   );
-};
+};  
 
 export default ButtonCategory;
