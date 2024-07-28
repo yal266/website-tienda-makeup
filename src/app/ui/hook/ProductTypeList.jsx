@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react";
-import ProductCard from "../components/ProductsList/ProductCard";
-import { fetchProducts } from "@services/ProductsServiceList";
+import { useEffect, useState } from "react";
+import { fetchProductsType } from "../../core/services/ProductsServiceType";
 import Loading from "../components/common/Cargando/Loading";
+import ProductCard from "../components/ProductsList/ProductCard";
 
-const ProductListMain = () => {
+const ProductTypeList = ({ productType }) => {
   const [productos, setProductos] = useState([]);
-  const [error, setError] = useState(null); // Manejo de errores
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const loadProducts = async () => {
+      setIsLoading(true);
+      setError(null);
+
       try {
-        const productosData = await fetchProducts();
-        console.log("Productos en ProductList:", productosData);
-        setProductos(productosData);
+        if (productType) {
+          const productosData = await fetchProductsType(productType);
+          console.log(`Productos de tipo ${productType}:`, productosData);
+          setProductos(productosData);
+        }
       } catch (error) {
         setError(error.message);
       } finally {
@@ -22,7 +26,7 @@ const ProductListMain = () => {
     };
 
     loadProducts();
-  }, []);
+  }, [productType]);
 
   if (isLoading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
@@ -38,4 +42,5 @@ const ProductListMain = () => {
   );
 };
 
-export default ProductListMain;
+export default ProductTypeList;
+                                                                                                                                  
