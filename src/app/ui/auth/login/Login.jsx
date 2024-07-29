@@ -37,7 +37,7 @@ export const Login = () => {
           </div>
         </div>
         <div className="mb-4">
-          <label for="password" className="login_label">
+          <label htmlFor="password" className="login_label">
             Password
           </label>
           <div className="login_form">
@@ -59,7 +59,7 @@ export const Login = () => {
 
         <div className="relative flex mx-auto gap-2 mb-4">
           <input type="checkbox" name="remember" id="check_login" />
-          <label for="check_login" className="login_label_check">
+          <label htmlFor="check_login" className="login_label_check">
             Remenber me
           </label>
         </div>
