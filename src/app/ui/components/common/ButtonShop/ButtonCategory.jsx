@@ -31,7 +31,6 @@ const ButtonCategory = ({ categories, onCategorySelect }) => {
   };
 
   return (
-    <div className="container section mx-auto px-5">
       <Slider {...settings}>
         {categories.map((category) => (
           <div key={category.product_type
@@ -45,7 +44,6 @@ const ButtonCategory = ({ categories, onCategorySelect }) => {
           </div>
         ))}
       </Slider>
-    </div>
   );
 };  
 
