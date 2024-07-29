@@ -11,10 +11,11 @@ export default defineConfig({
       "@constants": path.resolve(__dirname, "./src/constants"),
       "@api": path.resolve(__dirname, "./src/app/core/api"),
       "@services": path.resolve(__dirname, "./src/app/core/services"),
-      "@search": path.resolve(
+      "@hook": path.resolve(
         __dirname,
-        "./src/app/ui/components/common/search"
+        "./src/app/ui/hook"
       ),
+      "common":path.resolve(__dirname,"./src/app/ui/components/common")
     },
   },
 });
