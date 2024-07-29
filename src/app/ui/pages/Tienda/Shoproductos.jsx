@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-                                                                                                                                                                
+
 const Shoproductos = ({ categories, onCategorySelect }) => {
   const settings = {
     dots: false,
@@ -29,29 +29,27 @@ const Shoproductos = ({ categories, onCategorySelect }) => {
   };
 
   return (
-    <div className="container mx-auto section">
-      <Slider {...settings}>
-        {categories.map((category) => (
-          <div key={category.id} className="flex items-center">
-            <div className="flex overflow-hidden justify-center items-center">
-              <button
-                onClick={() => onCategorySelect(category.id )}
-                className="focus:outline-none "
-              >
-                <img
-                  src={""}
-                  alt={category.nombre}
-                  className="h-24 w-24 rounded-full object-cover border-2 border-pink-200 hover:border-pink-400 transition-colors"
-                />
-              </button>
-            </div>
-            <span className="mt-3 inline-block text-sm font-medium truncate text-center underline text-black w-full">
-              {category.nombre}
-            </span>
+    <Slider {...settings}>
+      {categories.map((category) => (
+        <div key={category.id} className="flex items-center">
+          <div className="flex overflow-hidden justify-center items-center">
+            <button
+              onClick={() => onCategorySelect(category.id)}
+              className="focus:outline-none "
+            >
+              <img
+                src={""}
+                alt={category.name}
+                className="h-24 w-24 rounded-full object-cover border-2 border-pink-200 hover:border-pink-400 transition-colors"
+              />
+            </button>
           </div>
-        ))}
-      </Slider>
-    </div>
+          <span className="mt-3 inline-block text-sm font-medium truncate text-center underline text-black w-full">
+            {category.name}
+          </span>
+        </div>
+      ))}
+    </Slider>
   );
 };
 

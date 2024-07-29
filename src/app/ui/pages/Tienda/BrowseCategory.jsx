@@ -2,7 +2,7 @@ import React from "react";
 
 const BrowseCategory = () => {
   return (
-    <div className="container section mx-auto px-5 flex justify-between">
+    <div className="flex justify-between">
       <h1 className="font-bold sm:text-base text-sm text-black">
         Browse by categories
       </h1>
