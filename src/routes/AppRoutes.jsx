@@ -9,8 +9,8 @@ import Limpiadores from "../app/ui/pages/Productos/Limpiadores";
 import Tonicos from "../app/ui/pages/Productos/Tonicos";
 import Serums from "../app/ui/pages/Productos/Serums";
 import Hidrantes from "../app/ui/pages/Productos/Hidrantes";
-import UseLogin from "../app/ui/auth/login/UseLogin";
 import Search from "../app/ui/components/common/search/Search";
+import Login from "../app/ui/auth/login/Login";
 
 export const AppRoutes = () => {
   return (
@@ -32,7 +32,7 @@ export const AppRoutes = () => {
             </Route>
 
             <Route path="/search" element={<Search />} />
-            <Route path="/login" element={<UseLogin />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
           <Routes></Routes>
         </main>
